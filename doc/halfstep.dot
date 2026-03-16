@@ -1,0 +1,50 @@
+digraph {
+    label = "Half-step rotary encoder FSM"
+    labelloc="t"
+    labeljust="l"
+
+    rankdir = TB
+
+    { rank = same; Ab; aB }
+
+    { rank = same; ab_unk; AB_unk }
+
+    Ab [ style = filled ]
+    aB [ style = filled ]
+    Ab -> aB
+    aB -> Ab
+
+    Ab   -> ab_a
+    ab_a -> Ab
+    Ab   -> AB_a
+    AB_a -> Ab
+
+    aB   -> ab_b
+    ab_b -> aB
+    aB   -> AB_b
+    AB_b -> aB
+
+    ab_a -> aB [ color = blue ]
+    AB_b -> Ab [ color = blue ]
+
+    ab_b -> Ab [ color = red ]
+    AB_a -> aB [ color = red ]
+
+    AB_a -> ab_unk
+    AB_b -> ab_unk
+
+    ab_a -> AB_unk
+    ab_b -> AB_unk
+
+    ab_unk -> Ab
+    ab_unk -> aB
+
+    AB_unk -> Ab
+    AB_unk -> aB
+
+    ab_unk [ style = filled ]
+    AB_unk [ style = filled ]
+
+    ab_unk -> AB_unk
+    AB_unk -> ab_unk
+}

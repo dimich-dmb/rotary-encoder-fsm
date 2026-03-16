@@ -1,0 +1,48 @@
+digraph {
+    label = "Full-step rotary encoder FSM (not tested)"
+    labelloc="t";
+    labeljust="l";
+
+    rankdir = TB
+
+    ab [ style = filled ]
+    Ab [ style = filled ]
+    aB [ style = filled ]
+    AB [ style = filled ]
+
+    { rank = same; Ab; aB }
+
+    ab -> Ab
+    ab -> AB
+    ab -> aB
+
+    Ab -> ab
+    Ab -> AB_a
+    Ab -> aB
+
+    AB_a -> Ab
+    AB_a -> ab
+    AB_a -> aB_a
+
+    aB_a -> AB_a
+    aB_a -> Ab
+    aB_a -> ab [ color = blue ]
+
+
+    aB -> ab
+    aB -> AB_b
+    aB -> Ab
+
+    AB_b -> aB
+    AB_b -> ab
+    AB_b -> Ab_b
+
+    Ab_b -> AB_b
+    Ab_b -> aB
+    Ab_b -> ab [ color = red ]
+
+    AB -> ab
+    AB -> Ab
+    AB -> aB
+
+}
