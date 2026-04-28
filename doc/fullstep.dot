@@ -1,5 +1,5 @@
 digraph {
-    label = "Full-step rotary encoder FSM (not tested)"
+    label = "Full-step rotary encoder FSM"
     labelloc="t";
     labeljust="l";
 
